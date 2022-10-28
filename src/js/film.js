@@ -26,7 +26,7 @@ class GetFilms {
       return error;
     }
   }
-};
+}
 
 class GetPeople {
   static async getInfo() {
@@ -44,7 +44,7 @@ class GetPeople {
       return error;
     }
   }
-};
+}
 
 class GetLocation {
   static async getInfo() {
@@ -62,7 +62,7 @@ class GetLocation {
       return error;
     }
   }
-};
+}
 
 class GetSpecies {
   static async getInfo() {
@@ -80,7 +80,7 @@ class GetSpecies {
       return error;
     }
   }
-};
+}
 
 class GetVehicles {
   static async getInfo() {
@@ -98,4 +98,6 @@ class GetVehicles {
       return error;
     }
   }
-};
+}
+
+export { GetFilms, GetLocation, GetPeople, GetSpecies, GetVehicles };
