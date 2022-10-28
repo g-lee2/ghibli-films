@@ -8,56 +8,88 @@ import { GetFilms, GetLocation, GetPeople, GetSpecies, GetVehicles } from './js/
 async function getFilms() {
   const response = await GetFilms.getInfo();
   if (response.main) {
-    printElements(response);
+    printFilmElements(response);
   } else {
-    printError(response);
+    printFilmError(response);
   }
 }
 
 async function getLocation() {
   const response = await GetLocation.getInfo();
   if (response.main) {
-    printElements(response);
+    printLocationElements(response);
   } else {
-    printError(response);
+    printLocationError(response);
   }
 }
 
 async function getPeople() {
   const response = await GetPeople.getInfo();
   if (response.main) {
-    printElements(response);
+    printPeopleElements(response);
   } else {
-    printError(response);
+    printPeopleError(response);
   }
 }
 
 async function getSpecies() {
   const response = await GetSpecies.getInfo();
   if (response.main) {
-    printElements(response);
+    printSpeciesElements(response);
   } else {
-    printError(response);
+    printSpeciesError(response);
   }
 }
 
 async function getVehicles() {
   const response = await GetVehicles.getInfo();
   if (response.main) {
-    printElements(response);
+    printVehiclesElements(response);
   } else {
-    printError(response);
+    printVehiclesError(response);
   }
 }
 
 // UI Logic
 
-function printElements(response) {
-  document.querySelector('.result').innerText = response;
+function printFilmElements(response) {
+  document.querySelector('.result-films').innerText = response;
 }
 
-function printError(error) {
-  document.querySelector('.result').innerText = error;
+function printFilmError(error) {
+  document.querySelector('.result-films').innerText = error;
+}
+
+function printLocationElements(response) {
+  document.querySelector('.result-location').innerText = response;
+}
+
+function printLocationError(error) {
+  document.querySelector('.result-location').innerText = error;
+}
+
+function printPeopleElements(response) {
+  document.querySelector('.result-people').innerText = response;
+}
+
+function printPeopleError(error) {
+  document.querySelector('.result-people').innerText = error;
+}
+
+function printSpeciesElements(response) {
+  document.querySelector('.result-species').innerText = response;
+}
+
+function printSpeciesError(error) {
+  document.querySelector('.result-species').innerText = error;
+}
+
+function printVehiclesElements(response) {
+  document.querySelector('.result-vehicles').innerText = response;
+}
+
+function printVehiclesError(error) {
+  document.querySelector('.result-vehicles').innerText = error;
 }
 
 function handleFormSubmission() {
