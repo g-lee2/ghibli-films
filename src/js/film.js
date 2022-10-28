@@ -16,8 +16,8 @@ class GetFilms {
     const urlToFetch = `${baseURL}${filmRequestEndpoint}`;
     try {
       const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await Response.json();
-      if (!Response.ok) {
+      const jsonifiedResponse = await response.json();
+      if (!response.ok) {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
@@ -34,8 +34,8 @@ class GetPeople {
     const urlToFetch = `${baseURL}${peopleRequestEndpoint}`;
     try {
       const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await Response.json();
-      if (!Response.ok) {
+      const jsonifiedResponse = await response.json();
+      if (!response.ok) {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
@@ -52,8 +52,8 @@ class GetLocation {
     const urlToFetch = `${baseURL}${locationRequestEndpoint}`;
     try {
       const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await Response.json();
-      if (!Response.ok) {
+      const jsonifiedResponse = await response.json();
+      if (!response.ok) {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
@@ -70,8 +70,8 @@ class GetSpecies {
     const urlToFetch = `${baseURL}${speciesRequestEndpoint}`;
     try {
       const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await Response.json();
-      if (!Response.ok) {
+      const jsonifiedResponse = await response.json();
+      if (!response.ok) {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
@@ -88,8 +88,8 @@ class GetVehicles {
     const urlToFetch = `${baseURL}${vehicleRequestEndpoint}`;
     try {
       const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await Response.json();
-      if (!Response.ok) {
+      const jsonifiedResponse = await response.json();
+      if (!response.ok) {
         const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
