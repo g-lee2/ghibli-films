@@ -10,40 +10,32 @@
 // https://ghibliapi.herokuapp.com/vehicles/<id>
 const baseURL = 'https://ghibliapi.herokuapp.com/';
 
-class GetFilms {
-  static async getInfo() {
+export default class GetFilms {
+  static getInfo() {
     const filmRequestEndpoint = 'films';
     const urlToFetch = `${baseURL}${filmRequestEndpoint}`;
-    try {
-      const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await response.json();
-      if (!response.ok) {
-        const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
-        throw new Error(errorMessage);
-      }
-      return jsonifiedResponse;
-    } catch(error) {
-      return error;
-    }
+    fetch(urlToFetch)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
   }
 }
 
-class GetPeople {
-  static async getInfo() {
-    const peopleRequestEndpoint = 'people';
-    const urlToFetch = `${baseURL}${peopleRequestEndpoint}`;
-    try {
-      const response = await fetch(urlToFetch);
-      const jsonifiedResponse = await response.json();
-      if (!response.ok) {
-        const errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
-        throw new Error(errorMessage);
-      }
-      return jsonifiedResponse;
-    } catch(error) {
-      return error;
-    }
+export class GetPeople {
+  static getInfo() {
+    const filmRequestEndpoint = 'people';
+    const urlToFetch = `${baseURL}${filmRequestEndpoint}`;
+    fetch(urlToFetch)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
   }
 }
-
-export { GetFilms, GetPeople };
