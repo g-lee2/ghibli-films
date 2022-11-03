@@ -1,29 +1,27 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import { GetFilms, GetPeople } from './js/film';
+import GetFilms from './js/film';
+import GetPeople from './js/film';
 
-// Business Logic
-
-async function getFilms() {
-  const response = await GetFilms.getInfo();
-  if (response.main) {
-    printFilmElements(response);
+function getFilms() {
+  const response = GetFilms.getInfo();
+  if (response == 200) {
+    printFilmElements(response.title);
   } else {
     printFilmError(response);
   }
 }
 
-async function getPeople() {
-  const response = await GetPeople.getInfo();
-  if (response.main) {
+function getPeople() {
+  const response = GetPeople.getInfo();
+  if (response == 200) {
     printPeopleElements(response);
   } else {
     printPeopleError(response);
   }
 }
 
-// UI Logic
 
 function printFilmElements(response) {
   document.querySelector('.result-films').innerText = response;
