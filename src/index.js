@@ -23,15 +23,35 @@ async function getFilms() {
 // }
 
 function printFilmElements(data) {
-  document.getElementById('film-title').innerHTML = data.title; 
-  document.getElementById('film-original-title').innerHTML = data.original_title;
-  document.getElementById('film-romanised-title').innerHTML = data.original_title_romanised;
-  document.getElementById('film-image').innerHTML = data.image;
-  document.getElementById('film-description').innerHTML = data.description;
-  document.getElementById('film-director').innerHTML = data.director;
-  document.getElementById('film-producer').innerHTML = data.producer;
-  document.getElementById('film-release-date').innerHTML = data.release_date;
-  document.getElementById('film-running-time').innerHTML = data.running_time;
+  for (let i = 0; i < data.length; i++) {
+    const ul = document.createElement('ul');
+    const li1 = document.createElement('li');
+    const li2 = document.createElement('li');
+    const li3 = document.createElement('li');
+    const li4 = document.createElement('li');
+    const li5 = document.createElement('li');
+    const li6 = document.createElement('li');
+    const li7 = document.createElement('li');
+    const li8 = document.createElement('li');
+    const p = document.getElementById('film-info');
+    li1.append(data[i].title);
+    li2.append(data[i].original_title);
+    li3.append(data[i].original_title_romanised);
+    li4.append(data[i].description);
+    li5.append(data[i].director);
+    li6.append(data[i].producer);
+    li7.append(data[i].release_date);
+    li8.append(data[i].running_time);
+    ul.append(li1);
+    ul.append(li2);
+    ul.append(li3);
+    ul.append(li4);
+    ul.append(li5);
+    ul.append(li6);
+    ul.append(li7);
+    ul.append(li8);
+    p.append(ul);
+  }
 }
 
 function printFilmError(error) {
