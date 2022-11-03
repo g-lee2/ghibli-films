@@ -20,8 +20,7 @@ export default class GetFilms {
         const errorMessage = `${response.status} ${response.statusTest} ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }
-      console.log(jsonifiedResponse[0]);
-      return jsonifiedResponse[0];
+      return jsonifiedResponse;
     } catch(error) {
       return error;
     }
