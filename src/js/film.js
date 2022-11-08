@@ -8,12 +8,11 @@
 // https://ghibliapi.herokuapp.com/species/<id>
 // https://ghibliapi.herokuapp.com/vehicles
 // https://ghibliapi.herokuapp.com/vehicles/<id>
-//const baseURL = 'https://ghibliapi.herokuapp.com/';
+//baseURL = 'https://ghibliapi.herokuapp.com/';
 
 export default class GetFilms {
   static async getInfo() {
     try {
-      //const filmRequestEndpoint = 'films';
       const response = await fetch ('https://ghibliapi.herokuapp.com/films');
       const jsonifiedResponse = await response.json();
       if (!response.ok) {

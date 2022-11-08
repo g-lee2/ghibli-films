@@ -33,6 +33,10 @@ function printFilmElements(data) {
     const li6 = document.createElement('li');
     const li7 = document.createElement('li');
     const li8 = document.createElement('li');
+    const li9 = document.createElement('li');
+    const li10 = document.createElement('li');
+    const image = document.createElement('img');
+    const movieBanner = document.createElement('img');
     const p = document.getElementById('film-info');
     li1.append(data[i].title);
     li2.append(data[i].original_title);
@@ -42,6 +46,10 @@ function printFilmElements(data) {
     li6.append(data[i].producer);
     li7.append(data[i].release_date);
     li8.append(data[i].running_time);
+    image.setAttribute("src", data[i].image);
+    movieBanner.setAttribute("src", data[i].movie_banner);
+    li9.append(image);
+    li10.append(movieBanner);
     ul.append(li1);
     ul.append(li2);
     ul.append(li3);
@@ -50,6 +58,8 @@ function printFilmElements(data) {
     ul.append(li6);
     ul.append(li7);
     ul.append(li8);
+    ul.append(li9);
+    ul.append(li10);
     p.append(ul);
   }
 }
