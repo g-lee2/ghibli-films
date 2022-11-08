@@ -79,9 +79,11 @@ function printFilmError(error) {
 function handleFormSubmission(event) {
   event.preventDefault();
   getFilms();
+  document.getElementById('button').setAttribute('class', 'hidden');
   // getPeople();
 }
 
 window.addEventListener("load", function() {
+  document.getElementById('button').removeAttribute('class');
   document.querySelector("form").addEventListener("submit", handleFormSubmission);
 });
