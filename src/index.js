@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import GetFilms from './js/film';
-import GetPeople from './js/film';
+//import GetPeople from './js/film';
 
 async function getFilms() {
   const response = await GetFilms.getInfo();
@@ -55,6 +55,23 @@ function printFilmElements(data) {
   }
 }
 
+function handleDirectorSelection() {
+  const userSelection = document.getElementById('director-names').value;
+  if (userSelection == 'Hayao-Miyazaki') {
+    
+  } else if (userSelection == "Isao-Takahata") {
+    
+  } else if (userSelection == "Yoshifumi-Kondō") {
+
+  } else if (userSelection == "Gorō-Miyazaki") {
+
+  } else if (userSelection == "Hiromasa-Yonebayashi") {
+
+  } else {
+
+  }
+}
+
 function printFilmError(error) {
   document.getElementsByClassName('film-title').innerText = error;
 }
@@ -69,4 +86,5 @@ function handleFormSubmission(event) {
 window.addEventListener("load", function() {
   document.getElementById('button').removeAttribute('class');
   document.querySelector("form").addEventListener("submit", handleFormSubmission);
+  document.getElementById('button').addEventListener('submit', handleDirectorSelection);
 });
