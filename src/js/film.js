@@ -26,17 +26,16 @@ export default class GetFilms {
   }
 }
 
-// export class GetPeople {
-//   static getInfo() {
-//     const filmRequestEndpoint = 'people';
-//     const urlToFetch = `${baseURL}${filmRequestEndpoint}`;
-//     fetch(urlToFetch)
-//       .then((response) => {
-//         return response.json();
-//       })
-//       .then((data) => {
-//         console.log(data);
-//         return data;
-//       });
-//   }
-// }
+export class GetPeople {
+  static getInfo(peopleId) {
+    const urlToFetch = `https://ghibliapi.herokuapp.com/people/${peopleId}`;
+    fetch(urlToFetch)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
+  }
+}
