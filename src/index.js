@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import GetFilms from './js/film';
-//import GetPeople from './js/film';
+import GetPeople from './js/film';
 
 async function getFilms() {
   const response = await GetFilms.getInfo();
@@ -12,15 +12,6 @@ async function getFilms() {
     printFilmError(response);
   }
 }
-
-// function getPeople() {
-//   const response = GetPeople.getInfo();
-//   if (response == 200) {
-//     printPeopleElements(response);
-//   } else {
-//     printPeopleError(response);
-//   }
-// }
 
 function printFilmElements(data) {
   for (let i = 0; i < data.length; i++) {
@@ -38,14 +29,14 @@ function printFilmElements(data) {
     const image = document.createElement('img');
     const movieBanner = document.createElement('img');
     const p = document.getElementById('film-info');
-    li1.append(data[i].title);
-    li2.append(data[i].original_title);
-    li3.append(data[i].original_title_romanised);
-    li4.append(data[i].description);
-    li5.append(data[i].director);
-    li6.append(data[i].producer);
-    li7.append(data[i].release_date);
-    li8.append(data[i].running_time);
+    li1.append('Title: ' + data[i].title);
+    li2.append('Japanese Title: ' + data[i].original_title);
+    li3.append('Romanised Title: ' + data[i].original_title_romanised);
+    li4.append('Movie Description: ' + data[i].description);
+    li5.append('Director: ' + data[i].director);
+    li6.append('Producer: ' + data[i].producer);
+    li7.append('Release Date: ' + data[i].release_date);
+    li8.append('Running Time: ' + data[i].running_time + ' minutes');
     image.setAttribute("src", data[i].image);
     movieBanner.setAttribute("src", data[i].movie_banner);
     li9.append(image);
@@ -67,14 +58,6 @@ function printFilmElements(data) {
 function printFilmError(error) {
   document.getElementsByClassName('film-title').innerText = error;
 }
-
-// function printPeopleElements(data) {
-//   document.querySelector('.result-people').innerText = response;
-// }
-
-// function printPeopleError(error) {
-//   document.querySelector('.result-people').innerText = error;
-// }
 
 function handleFormSubmission(event) {
   event.preventDefault();
